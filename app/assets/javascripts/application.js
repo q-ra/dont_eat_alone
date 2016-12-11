@@ -15,3 +15,4 @@
 //= require jquery-3.1.1.min
 //= require bootstrap.min
 //= require jquery.form.min
+//= require sweetalert2.min.js
