@@ -8,37 +8,60 @@
       %a.navbar-brand{:href => "#"}
         =I18n.t('dea')
     #navbar.navbar-collapse.collapse
-      %ul.nav.navbar-nav
-        %li.active
-          %a{:href => "#"} Home
-        %li
-          %a{:href => "#about"} About
-        %li
-          %a{:href => "#contact"} Contact
+      -# %ul.nav.navbar-nav
+      -#   %li.active
+      -#     %a{:href => "#"} Home
+      -#   %li
+      -#     %a{:href => "#about"} About
+      -#   %li
+      -#     %a{:href => "#contact"} Contact
+      -#   %li.dropdown
+      -#     %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+      -#       Dropdown
+      -#       %span.caret
+      -#     %ul.dropdown-menu
+      -#       %li
+      -#         %a{:href => "#"} Action
+      -#       %li
+      -#         %a{:href => "#"} Another action
+      -#       %li
+      -#         %a{:href => "#"} Something else here
+      -#       %li.divider{:role => "separator"}
+      -#       %li.dropdown-header Nav header
+      -#       %li
+      -#         %a{:href => "#"} Separated link
+      -#       %li
+      -#         %a{:href => "#"} One more separated link
+      %ul.nav.navbar-nav.navbar-right
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            Dropdown
+            Miejsca
             %span.caret
           %ul.dropdown-menu
             %li
-              %a{:href => "#"} Action
+              %a{:href => "#"} Zapisane
             %li
-              %a{:href => "#"} Another action
+              %a{:href => "#"} Szukaj
             %li
-              %a{:href => "#"} Something else here
-            %li.divider{:role => "separator"}
-            %li.dropdown-header Nav header
+              %a{:href => "#"} Przeglądaj
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Znajomi
+            %span.caret
+          %ul.dropdown-menu
             %li
-              %a{:href => "#"} Separated link
+              %a{:href => "#"} Moi znajomi
             %li
-              %a{:href => "#"} One more separated link
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          %a{:href => "../navbar/"} Default
-        %li
-          %a{:href => "../navbar-static-top/"} Static top
-        %li.active
-          %a{:href => "./"}
-            Fixed top
-            %span.sr-only (current)
+              %a{:href => "#"} Szukaj
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Konto
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"} Preferencje
+            %li
+              %a{:href => "#"} Ustawienia
+            %li
+              %a{:href => "#"} Zaloguj              
     / /.nav-collapse
