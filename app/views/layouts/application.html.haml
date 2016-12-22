@@ -8,4 +8,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'partials/navbar'
+    .margin-top-75px
+      .js-vue-flash-messages
+        = flash.to_json
     = yield

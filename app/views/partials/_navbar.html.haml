@@ -8,60 +8,47 @@
       %a.navbar-brand{:href => "#"}
         =I18n.t('dea')
     #navbar.navbar-collapse.collapse
-      -# %ul.nav.navbar-nav
-      -#   %li.active
-      -#     %a{:href => "#"} Home
-      -#   %li
-      -#     %a{:href => "#about"} About
-      -#   %li
-      -#     %a{:href => "#contact"} Contact
-      -#   %li.dropdown
-      -#     %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-      -#       Dropdown
-      -#       %span.caret
-      -#     %ul.dropdown-menu
-      -#       %li
-      -#         %a{:href => "#"} Action
-      -#       %li
-      -#         %a{:href => "#"} Another action
-      -#       %li
-      -#         %a{:href => "#"} Something else here
-      -#       %li.divider{:role => "separator"}
-      -#       %li.dropdown-header Nav header
-      -#       %li
-      -#         %a{:href => "#"} Separated link
-      -#       %li
-      -#         %a{:href => "#"} One more separated link
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            Miejsca
+            =t('miscellaneous.places')
             %span.caret
           %ul.dropdown-menu
             %li
-              %a{:href => "#"} Zapisane
+              %a{:href => "#"}
+                = t('miscellaneous.my_places')
             %li
-              %a{:href => "#"} Szukaj
+              %a{:href => "#"}
+                = t('miscellaneous.search')
             %li
-              %a{:href => "#"} Przeglądaj
+              %a{:href => "#"}
+                =t('miscellaneous.watch')
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            Znajomi
+            =t('miscellaneous.friends')
             %span.caret
           %ul.dropdown-menu
             %li
-              %a{:href => "#"} Moi znajomi
+              %a{:href => "#"}
+                =t('miscellaneous.my_friens')
             %li
-              %a{:href => "#"} Szukaj
+              %a{:href => "#"}
+                =t('miscellaneous.search')
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            Konto
+            =t('miscellaneous.account')
             %span.caret
           %ul.dropdown-menu
             %li
-              %a{:href => "#"} Preferencje
+              %a{:href => "#"}
+                =t('miscellaneous.preferences')
             %li
-              %a{:href => "#"} Ustawienia
+              %a{:href => "#"}
+                =t('miscellaneous.settings')
             %li
-              %a{:href => "#"} Zaloguj              
+              %a{:href => "#"}
+                -if current_user
+                  = link_to(t('miscellaneous.logout'), destroy_user_session_url, :method => :delete)
+                -else
+                  = link_to(t('miscellaneous.login'), new_user_session_url)
     / /.nav-collapse

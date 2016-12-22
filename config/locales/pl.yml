@@ -1,2 +1,17 @@
 pl:
   dea: DontEatAlone
+
+  miscellaneous:
+    places: Miejsca
+    search: Szukaj
+    friends: Znajomi
+    my_places: Moje Miejsca
+    my_friens: Moi znajomi
+    propose: Zaproponuj
+    account: Konto
+    preferences: Preferencje
+    settings: Ustawienia
+    login: Zaloguj
+    logout: Wyloguj
+    saved0: Zapisane
+    watch: Przeglądaj
