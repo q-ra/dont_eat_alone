@@ -10,9 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
+
 //= require vue
-//= require jquery-3.1.1.min
+//= require jquery3
+//= require jquery_ujs
 //= require bootstrap.min
 //= require jquery.form.min
 //= require sweetalert2.min.js
+
+//= require_tree .

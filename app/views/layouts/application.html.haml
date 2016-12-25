@@ -4,11 +4,11 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title DontEatAlone
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+
   %body
     = render 'partials/navbar'
     .margin-top-75px
-      .js-vue-flash-messages
-        = flash.to_json
+    .dea-none.js-vue-flash-messages{ ':flashJson': 'setFlashJson(' + flash.to_json + ')' }
     = yield
+    = javascript_include_tag 'application'
