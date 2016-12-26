@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @restaurant.name
+%p
+  %b Pyszne address:
+  = @restaurant.pyszne_address
+%p
+  %b Picture address:
+  = @restaurant.picture_address
+%p
+  %b Meal type:
+  = @restaurant.meal_type
+%p
+  %b City:
+  = @restaurant.city
+%p
+  %b Street:
+  = @restaurant.street
+%p
+  %b Zip code:
+  = @restaurant.zip_code
+%p
+  %b Website:
+  = @restaurant.website
+%p
+  %b Category:
+  = @restaurant.category
+%p
+  %b Latitude:
+  = @restaurant.latitude
+%p
+  %b Longitude:
+  = @restaurant.longitude
+
+= link_to 'Edit', edit_restaurant_path(@restaurant)
+\|
+= link_to 'Back', restaurants_path
