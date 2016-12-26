@@ -1,6 +1,3 @@
-// $(document).ready(function(){
-
-
 new Vue({
   el: '.js-vue-flash-messages',
   methods: {
@@ -31,9 +28,4 @@ new Vue({
     flashJson: {}
   },
 
-  // mounted: function(){
-  //
-  // }
 })
-
-// })
