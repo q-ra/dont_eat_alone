@@ -32,10 +32,8 @@ restaurants_hash = {}
 
       current_hash.merge! Hash[*div_with_detailed_info.css('span.geo.yd-geo-map').css('meta').first.attributes.values.each.map {|x| x.to_s}]  #szerokość geograficzna
       current_hash.merge! Hash[*div_with_detailed_info.css('span.geo.yd-geo-map').css('meta').last.attributes.values.map {|x| x.to_s}]  # długość geograficzna
-      break
     end
   end
-  break
 end
 
 IO.write('/tmp/restauracje_pyszne_pl', restaurants_hash.to_json)
