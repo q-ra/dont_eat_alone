@@ -10,7 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161220215355) do
+ActiveRecord::Schema.define(version: 20170101221056) do
+
+  create_table "opening_closings", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.string   "mo_opening"
+    t.string   "mo_closing"
+    t.string   "tu_opening"
+    t.string   "tu_closing"
+    t.string   "we_opening"
+    t.string   "we_closing"
+    t.string   "th_opening"
+    t.string   "th_closing"
+    t.string   "fr_opening"
+    t.string   "fr_closing"
+    t.string   "sa_opening"
+    t.string   "sa_closing"
+    t.string   "su_opening"
+    t.string   "su_closing"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "name"
+    t.string   "pyszne_address"
+    t.string   "picture_address"
+    t.string   "meal_type"
+    t.string   "city"
+    t.string   "street"
+    t.string   "zip_code"
+    t.string   "website"
+    t.string   "category"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

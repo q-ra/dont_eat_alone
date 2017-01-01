@@ -1,6 +1,6 @@
 require 'json'
-def insert_into_database json_file
-  hash_with_restaurants = JSON.parse IO.read json_file
+def insert_into_database
+  hash_with_restaurants = JSON.parse IO.read '/tmp/restauracje_pyszne_pl'
   hash_with_restaurants.each do |restaurant|
     pyszne_address = restaurant[0]
     restaurant = restaurant[1]
@@ -41,3 +41,5 @@ end
 class NilClass
   def [] x; end
 end
+
+insert_into_database
