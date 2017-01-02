@@ -15,7 +15,10 @@ def insert_into_database
       website: restaurant['website'],
       category: restaurant['category'],
       latitude: restaurant['latitude' ],
-      longitude: restaurant['longitude']
+      longitude: restaurant['longitude'],
+      delivery_price: restaurant['delivery_price'],
+      minimal_delivery_price: restaurant['minimal_delivery_price'],
+      free_delivery: restaurant['free_delivery']
     )
     datetime_hash = {}
     restaurant['datetime'].flatten.each { |day| datetime_hash.merge! day}
