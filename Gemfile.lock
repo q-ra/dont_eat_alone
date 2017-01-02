@@ -39,6 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    awesome_print (1.7.0)
     bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.6)
@@ -46,6 +47,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.1)
     commonjs (0.2.7)
     concurrent-ruby (1.0.2)
     connection_pool (2.2.1)
@@ -119,6 +121,10 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (3.6.2)
     rack (2.0.1)
     rack-protection (1.5.3)
@@ -164,6 +170,7 @@ GEM
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
       redis (~> 3.2, >= 3.2.1)
+    slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -203,6 +210,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   byebug
   devise
   figaro
@@ -213,6 +221,7 @@ DEPENDENCIES
   less-rails
   listen (~> 3.0.5)
   paperclip
+  pry
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   redis (~> 3.0)

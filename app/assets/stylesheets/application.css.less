@@ -19,14 +19,27 @@
 
 @import "bootstrap/bootstrap";
 
+
 @dea-main-color: '#198c67';
 @dea-secondary-color: '#1ea076';
 
 .dea-none{
-  display: none;  
+  display: none;
 }
 
-.margin-top-75px{
+.dea-margin-top-75px{
   margin-top: 75px;
   display: block;
+}
+
+.dea-centered{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dea-centered-column{
+  .dea-centered;
+  flex-direction: column; 
 }

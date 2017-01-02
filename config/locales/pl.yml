@@ -16,3 +16,6 @@ pl:
     saved0: Zapisane
     watch: Przeglądaj
     report: Zgłoś
+
+  restaurant:
+    report_new: 'Zgłoś nową restaurację'
