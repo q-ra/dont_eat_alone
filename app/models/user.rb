@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :users, through: :affairs
   has_many :chat_users
   has_many :chats, through: :chat_users
+  has_many :user_restaurans
+  has_many :restaurants, through: :user_restaurans
 end
