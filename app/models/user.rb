@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :affairs, foreign_key: 'first_person_id', class_name: 'Affair'
-  has_many :users, through: :affairs 
+  has_many :users, through: :affairs
+  has_many :chat_users
+  has_many :chats, through: :chat_users
 end
