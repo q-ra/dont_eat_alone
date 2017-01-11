@@ -5,9 +5,9 @@
         = link_to root_path, class: 'brand-logo' do
           %i.fa.fa-cutlery.hide-on-med-and-down
           = t('dea')
-        %a{href: '#', :'data-activates' => 'm-mobile-nav', class: 'button-collapse'}
+        %a.button-collapse{href: '#', :'data-activates' => 'm-mobile-nav'}
           %i.fa.fa-cutlery.fa-2x
-        %ul{class: "right hide-on-med-and-down"}
+        %ul.right.hide-on-med-and-down
           %li
             = link_to t('miscellaneous.places'), restaurants_url
           %li
@@ -15,7 +15,7 @@
           %li
             = link_to t('miscellaneous.account'), '#'
 
-        %ul{class: "side-nav", id: 'm-mobile-nav'}
+        %ul.side-nav{id: 'm-mobile-nav'}
           %li
             = link_to t('miscellaneous.places'), restaurants_url
           %li
