@@ -11,7 +11,7 @@ gem 'sidekiq'
 gem 'figaro'
 gem 'paperclip'
 gem 'haml-rails'
-gem 'less-rails'
+gem 'sass-rails'
 gem 'therubyracer'
 gem 'font-awesome-rails'
 gem 'sprockets', '3.6.3'
@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'will_paginate'
 gem 'awesome_print'
 gem 'pry'
+gem 'materialize-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

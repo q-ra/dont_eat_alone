@@ -1,58 +1,24 @@
-%nav.navbar.navbar-default.navbar-fixed-top
-  .container
-    .navbar-header
-      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %a.navbar-brand{:href => "#"}
-        =I18n.t('dea')
-    #navbar.navbar-collapse.collapse
-      %ul.nav.navbar-nav.navbar-right
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            =t('miscellaneous.places')
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"}
-                = t('miscellaneous.my_places')
-            %li
-              %a{:href => "#"}
-                = t('miscellaneous.search')
-            %li
-              %a{:href => restaurants_url}
-                =t('miscellaneous.watch')
-            %li
-              %a{:href => "#"}
-                =t('miscellaneous.report')
+.navber-fixed
+  %nav
+    .nav-wrapper
+      .container
+        = link_to root_path, class: 'brand-logo' do
+          %i.fa.fa-cutlery.hide-on-med-and-down
+          = t('dea')
+        %a{href: '#', :'data-activates' => 'm-mobile-nav', class: 'button-collapse'}
+          %i.fa.fa-cutlery.fa-2x
+        %ul{class: "right hide-on-med-and-down"}
+          %li
+            = link_to t('miscellaneous.places'), restaurants_url
+          %li
+            = link_to t('miscellaneous.friends'), '#'
+          %li
+            = link_to t('miscellaneous.account'), '#'
 
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            =t('miscellaneous.friends')
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"}
-                =t('miscellaneous.my_friens')
-            %li
-              %a{:href => "#"}
-                =t('miscellaneous.search')
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            =t('miscellaneous.account')
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"}
-                =t('miscellaneous.preferences')
-            %li
-              %a{:href => "#"}
-                =t('miscellaneous.settings')
-            %li
-              %a{:href => "#"}
-                -if current_user
-                  = link_to(t('miscellaneous.logout'), destroy_user_session_url, :method => :delete)
-                -else
-                  = link_to(t('miscellaneous.login'), new_user_session_url)
-    / /.nav-collapse
+        %ul{class: "side-nav", id: 'm-mobile-nav'}
+          %li
+            = link_to t('miscellaneous.places'), restaurants_url
+          %li
+            = link_to t('miscellaneous.friends'), '#'
+          %li
+            = link_to t('miscellaneous.account'), '#'

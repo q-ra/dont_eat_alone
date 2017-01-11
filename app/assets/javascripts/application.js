@@ -14,8 +14,12 @@
 //= require vue
 //= require jquery3
 //= require jquery_ujs
-//= require bootstrap.min
 //= require jquery.form.min
 //= require sweetalert2.min.js
-
+//= require materialize
+//= require materialize-sprockets
 //= require_tree .
+
+$(document).ready(function(){
+  $(".button-collapse").sideNav()
+})

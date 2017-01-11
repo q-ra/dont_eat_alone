@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103210553) do
+ActiveRecord::Schema.define(version: 20170108222359) do
 
   create_table "affairs", force: :cascade do |t|
     t.integer  "first_person_id"
@@ -18,6 +18,27 @@ ActiveRecord::Schema.define(version: 20170103210553) do
     t.string   "state"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "chat_users", force: :cascade do |t|
+    t.string   "state"
+    t.integer  "user_id"
+    t.integer  "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.integer  "chat_user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "chat_id"
+    t.integer  "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "opening_closings", force: :cascade do |t|
@@ -57,6 +78,13 @@ ActiveRecord::Schema.define(version: 20170103210553) do
     t.float    "delivery_price"
     t.float    "minimal_delivery_price"
     t.float    "free_delivery"
+  end
+
+  create_table "user_restaurants", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "restaurant_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
