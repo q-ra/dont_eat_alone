@@ -1,26 +1,33 @@
 require 'json'
+require 'awesome_print'
+
 def insert_into_database
   hash_with_restaurants = JSON.parse IO.read '/tmp/restauracje_pyszne_pl'
+
   hash_with_restaurants.each do |restaurant|
     pyszne_address = restaurant[0]
     restaurant = restaurant[1]
 
+    # puts restaurant.awesome_inspect plain: true
+
     current_restaurant = Restaurant.where(pyszne_address: pyszne_address)
-      .first_or_create do |tmp_restaurant|
-        tmp_restaurant.name = restaurant['name'],
-        tmp_restaurant.picture_address = restaurant['picture'],
-        tmp_restaurant.meal_type = restaurant['meal_types'],
-        tmp_restaurant.city = restaurant['city'],
-        tmp_restaurant.street = restaurant['street'],
-        tmp_restaurant.zip_code = restaurant['zip_code'],
-        tmp_restaurant.website = restaurant['website'],
-        tmp_restaurant.category = restaurant['category'],
-        tmp_restaurant.latitude = restaurant['latitude' ],
-        tmp_restaurant.longitude = restaurant['longitude'],
-        tmp_restaurant.delivery_price = restaurant['delivery_price'],
-        tmp_restaurant.minimal_delivery_price = restaurant['minimal_delivery_price'],
-        tmp_restaurant.free_delivery = restaurant['free_delivery'],
-        tmp_restaurant.image = URI.parse('http://' + restaurant['picture'].gsub('155-100', '310-200'))
+      .first_or_create do |r|
+        r.name = restaurant['name']
+        r.picture_address = restaurant['picture']
+        r.meal_type = restaurant['meal_types']
+        r.city = restaurant['city']
+        r.street = restaurant['street']
+        r.zip_code = restaurant['zip_code']
+        r.website = restaurant['website']
+        r.category = restaurant['category']
+        r.latitude = restaurant['latitude' ]
+        r.longitude = restaurant['longitude']
+        r.delivery_price = restaurant['delivery_price']
+        r.minimal_delivery_price = restaurant['minimal_delivery_price']
+        r.free_delivery = restaurant['free_delivery']
+        r.image = URI.parse(
+          'http://' + restaurant['picture'].gsub('155-100', '310-200')
+        )
       end
 
 

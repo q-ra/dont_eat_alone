@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'json'
+require 'awesome_print'
 
 restaurants_hash = {}
 

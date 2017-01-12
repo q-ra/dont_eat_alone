@@ -1,3 +1,5 @@
+'use strict'
+
 new Vue({
   el: '.js-vue-flash-messages',
   methods: {
