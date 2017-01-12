@@ -30,6 +30,22 @@ def insert_into_database
         )
       end
 
+      restaurant['meals'].each do |_meal|
+        meal = Meal.create(
+          name: _meal['name'],
+          description: _meal['description']
+        )
+
+        _meal['sizes'].each do |_size|
+          meal_size = MealSize.create(
+            name: _size['name'],
+            cost: _size['cost']
+          )
+          meal.meal_sizes << meal_size
+        end
+        current_restaurant.meals << meal
+      end
+
 
     datetime_hash = {}
     restaurant['datetime'].flatten.each { |day| datetime_hash.merge! day}
