@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170108222359) do
+ActiveRecord::Schema.define(version: 20170112082203) do
 
   create_table "affairs", force: :cascade do |t|
     t.integer  "first_person_id"
@@ -78,6 +78,10 @@ ActiveRecord::Schema.define(version: 20170108222359) do
     t.float    "delivery_price"
     t.float    "minimal_delivery_price"
     t.float    "free_delivery"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "user_restaurants", force: :cascade do |t|

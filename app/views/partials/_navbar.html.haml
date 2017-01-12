@@ -1,4 +1,4 @@
-.navber-fixed
+.navbar-fixed
   %nav
     .nav-wrapper
       .container
@@ -15,10 +15,10 @@
           %li
             = link_to t('miscellaneous.account'), '#'
 
-        %ul.side-nav{id: 'm-mobile-nav'}
-          %li
-            = link_to t('miscellaneous.places'), restaurants_url
-          %li
-            = link_to t('miscellaneous.friends'), '#'
-          %li
-            = link_to t('miscellaneous.account'), '#'
+%ul.side-nav{id: 'm-mobile-nav'}
+  %li
+    = link_to t('miscellaneous.places'), restaurants_url
+  %li
+    = link_to t('miscellaneous.friends'), '#'
+  %li
+    = link_to t('miscellaneous.account'), '#'

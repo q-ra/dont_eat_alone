@@ -21,3 +21,4 @@
 .byebug_history
 .tags
 config/application.yml
+public/system/*

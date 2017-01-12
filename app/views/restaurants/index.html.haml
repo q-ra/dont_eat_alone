@@ -1,15 +1,16 @@
-.container
-  .row.text-center
-    - @restaurants.each do |restaurant|
-      .col-md-4.col-sm-6.col-xs-12.center-block
-        .dea-index-restaurant
-          = image_tag resized_pyszne_image(restaurant), class: 'img-responsive'
-          %h3.dea-index-restaurant-title
-            = restaurant.name
-          %p.dea-index-restaurant-meal-type
-            = restaurant.meal_type
+.row
+  - @restaurants.each do |restaurant|
+    .card-panel.col.s12.m6.l4.center
+      = image_tag resized_pyszne_image(restaurant), class: 'responsive-img'
+    -# = restaurant.name
+    -# = restaurant.meal_type
 
-  .col-xs-12
-    = will_paginate @posts
-  .col-xs-12
-    = link_to I18n.t('restaurant.report_new'), new_restaurant_path
+
+
+
+
+
+.col-xs-12
+  = will_paginate @posts
+.col-xs-12
+  = link_to I18n.t('restaurant.report_new'), new_restaurant_path

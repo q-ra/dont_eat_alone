@@ -4,22 +4,26 @@ def insert_into_database
   hash_with_restaurants.each do |restaurant|
     pyszne_address = restaurant[0]
     restaurant = restaurant[1]
-    current_restaurant = Restaurant.create(
-      pyszne_address: pyszne_address,
-      name: restaurant['name'],
-      picture_address: restaurant['picture'],
-      meal_type: restaurant['meal_types'],
-      city: restaurant['city'],
-      street: restaurant['street'],
-      zip_code: restaurant['zip_code'],
-      website: restaurant['website'],
-      category: restaurant['category'],
-      latitude: restaurant['latitude' ],
-      longitude: restaurant['longitude'],
-      delivery_price: restaurant['delivery_price'],
-      minimal_delivery_price: restaurant['minimal_delivery_price'],
-      free_delivery: restaurant['free_delivery']
-    )
+
+    current_restaurant = Restaurant.where(pyszne_address: pyszne_address)
+      .first_or_create do |tmp_restaurant|
+        tmp_restaurant.name = restaurant['name'],
+        tmp_restaurant.picture_address = restaurant['picture'],
+        tmp_restaurant.meal_type = restaurant['meal_types'],
+        tmp_restaurant.city = restaurant['city'],
+        tmp_restaurant.street = restaurant['street'],
+        tmp_restaurant.zip_code = restaurant['zip_code'],
+        tmp_restaurant.website = restaurant['website'],
+        tmp_restaurant.category = restaurant['category'],
+        tmp_restaurant.latitude = restaurant['latitude' ],
+        tmp_restaurant.longitude = restaurant['longitude'],
+        tmp_restaurant.delivery_price = restaurant['delivery_price'],
+        tmp_restaurant.minimal_delivery_price = restaurant['minimal_delivery_price'],
+        tmp_restaurant.free_delivery = restaurant['free_delivery'],
+        tmp_restaurant.image = URI.parse('http://' + restaurant['picture'].gsub('155-100', '310-200'))
+      end
+
+
     datetime_hash = {}
     restaurant['datetime'].flatten.each { |day| datetime_hash.merge! day}
     current_restaurant.opening_closing = OpeningClosing.create(
