@@ -17,5 +17,7 @@ pl:
     watch: Przeglądaj
     report: Zgłoś
 
+    pyszne_pl: pyszne.pl
+    website: witryna
   restaurant:
     report_new: 'Zgłoś nową restaurację'

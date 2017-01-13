@@ -1,38 +1,18 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @restaurant.name
-%p
-  %b Pyszne address:
-  = @restaurant.pyszne_address
-%p
-  %b Picture address:
-  = @restaurant.picture_address
-%p
-  %b Meal type:
-  = @restaurant.meal_type
-%p
-  %b City:
-  = @restaurant.city
-%p
-  %b Street:
-  = @restaurant.street
-%p
-  %b Zip code:
-  = @restaurant.zip_code
-%p
-  %b Website:
-  = @restaurant.website
-%p
-  %b Category:
-  = @restaurant.category
-%p
-  %b Latitude:
-  = @restaurant.latitude
-%p
-  %b Longitude:
-  = @restaurant.longitude
+.col.s12.m7
+  %h2.header
+    = @restaurant.name
+  .card.horizontal
+    .card-image
+      %img{:src => @restaurant.image.url}/
+    .card-stacked
+      .card-content
+        %p
+          = @restaurant.meal_type
+        %p
+          = todays_opening_closing @restaurant
+      .card-action
+        = link_to t('miscellaneous.pyszne_pl'), pyszne_link(@restaurant.pyszne_address)
+        = link_to t('miscellaneous.website'), @restaurant.website if @restaurant.website
 
 = link_to 'Edit', edit_restaurant_path(@restaurant)
 \|
