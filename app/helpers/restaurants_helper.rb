@@ -31,6 +31,6 @@ module RestaurantsHelper
   end
 
   def meal_size_fix_name name
-    name == 'Normal' or name.blank? ? 'Standardowa porcja' : name
+    (name == 'Normal' or name.blank?) ? 'Standardowa porcja' : name
   end
 end
