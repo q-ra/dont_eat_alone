@@ -1,0 +1,15 @@
+%ul.collapsible{'data-collapsible': 'accordion'}
+  - @restaurant.meals.each do |meal|
+    %li
+      .collapsible-header
+        = meal.name
+        %span.badge
+          = range_of_meal_prices(meal)
+      .collapsible-body
+        - if meal.description.present?
+          %p
+            = meal.description
+        %p
+          -meal.meal_sizes.each do |meal_size|
+            = "#{meal_size_fix_name(meal_size.name)} -- #{get_pln(meal_size.cost)}"
+            %br

@@ -1,20 +1,50 @@
-.col.s12.m7
-  %h2.header
-    = @restaurant.name
-  .card.horizontal
-    .card-image
-      %img{:src => @restaurant.image.url}/
-    .card-stacked
-      .card-content
-        %p
-          = @restaurant.meal_type
-        %p
-          = todays_opening_closing @restaurant
-        %p
-          = range_of_prices @restaurant
-      .card-action
-        = link_to t('miscellaneous.pyszne_pl'), pyszne_link(@restaurant.pyszne_address)
-        = link_to t('miscellaneous.website'), @restaurant.website if @restaurant.website
+.row
+  .col.s12.l6
+    %h2.header
+      = @restaurant.name
+    .card.horizontal
+      .card-image
+        %img{:src => @restaurant.image.url}/
+      .card-stacked
+        .card-content
+          %p
+            = @restaurant.meal_type
+          .hide-on-small-only
+            %p
+              = todays_opening_closing @restaurant
+            %p
+              = range_of_prices @restaurant
+        .card-action
+          = link_to t('miscellaneous.pyszne_pl'), pyszne_link(@restaurant.pyszne_address)
+          = link_to t('miscellaneous.website'), @restaurant.website if @restaurant.website
+
+.row
+  .col.s12
+    %ul.tabs.tabs-fixed-width
+      %li.tab.col.s3
+        %a{:href => "#dea-restaurant-show-partial-informations"}
+          = t('miscellaneous.informations')
+
+      %li.tab.col.s3
+        %a.active{:href => "#dea-restaurant-show-partial-menu"}
+          = t('miscellaneous.menu')
+
+      %li.tab.col.s3
+        %a{:href => "#dea-restaurant-show-partial-comments"}
+          = t('miscellaneous.comments')
+
+      %li.tab.col.s3
+        %a{:href => "#dea-restaurant-show-partial-matchings"}
+          = t('miscellaneous.matchings')
+
+    #dea-restaurant-show-partial-informations.col.s12
+      = render partial: 'restaurants/partials/informations'
+    #dea-restaurant-show-partial-menu.col.s12
+      = render 'restaurants/partials/menu'
+    #dea-restaurant-show-partial-comments.col.s12
+      = render 'restaurants/partials/comments'
+    #dea-restaurant-show-partial-matchings.col.s12
+      = render 'restaurants/partials/matchings'
 
 = link_to 'Edit', edit_restaurant_path(@restaurant)
 \|

@@ -17,4 +17,20 @@ module RestaurantsHelper
       .meals.map(&:meal_sizes).flatten.pluck(:cost).sort
     get_pln(cheapest) << ' - ' << get_pln(most_expensive)
   end
+
+  def range_of_meal_prices meal
+     costs = meal.meal_sizes.pluck(:cost).sort
+     cheapest = costs[0]
+     the_most_expensive = costs[-1]
+
+     if cheapest == the_most_expensive
+        return get_pln(cheapest)
+      else
+        return get_pln(cheapest) + ' - ' + get_pln(the_most_expensive)
+      end
+  end
+
+  def meal_size_fix_name name
+    name == 'Normal' or name.blank? ? 'Standardowa porcja' : name
+  end
 end

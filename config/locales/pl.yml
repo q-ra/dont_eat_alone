@@ -19,5 +19,11 @@ pl:
 
     pyszne_pl: pyszne.pl
     website: witryna
+
+    informations: Informacje
+    menu: Menu
+    comments: Komentarze
+    matchings: Dopasowania
+
   restaurant:
-    report_new: 'Zgłoś nową restaurację'
+    report_new: Zgłoś nową restaurację
