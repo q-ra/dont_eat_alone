@@ -11,4 +11,10 @@ module RestaurantsHelper
     closing = opening_closing[days[day_number] + '_closing']
     opening << ' - ' << closing
   end
+
+  def range_of_prices restaurant
+    cheapest, *_ , most_expensive = restaurant
+      .meals.map(&:meal_sizes).flatten.pluck(:cost).sort
+    get_pln(cheapest) << ' - ' << get_pln(most_expensive)
+  end
 end

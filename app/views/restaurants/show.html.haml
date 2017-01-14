@@ -10,6 +10,8 @@
           = @restaurant.meal_type
         %p
           = todays_opening_closing @restaurant
+        %p
+          = range_of_prices @restaurant
       .card-action
         = link_to t('miscellaneous.pyszne_pl'), pyszne_link(@restaurant.pyszne_address)
         = link_to t('miscellaneous.website'), @restaurant.website if @restaurant.website
