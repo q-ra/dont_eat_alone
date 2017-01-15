@@ -4,7 +4,8 @@
       .collapsible-header
         = meal.name
         %span.badge
-          = range_of_meal_prices(meal)
+          .hide-on-small-only
+            = range_of_meal_prices(meal)
       .collapsible-body
         - if meal.description.present?
           %p

@@ -23,19 +23,19 @@
     %ul.tabs.tabs-fixed-width
       %li.tab.col.s3
         %a{:href => "#dea-restaurant-show-partial-informations"}
-          = t('miscellaneous.informations')
+          %i.fa.fa-info
 
       %li.tab.col.s3
         %a.active{:href => "#dea-restaurant-show-partial-menu"}
-          = t('miscellaneous.menu')
+          %i.fa.fa-list
 
       %li.tab.col.s3
         %a{:href => "#dea-restaurant-show-partial-comments"}
-          = t('miscellaneous.comments')
+          %i.fa.fa-comments-o
 
       %li.tab.col.s3
         %a{:href => "#dea-restaurant-show-partial-matchings"}
-          = t('miscellaneous.matchings')
+          %i.fa.fa-users
 
     #dea-restaurant-show-partial-informations.col.s12
       = render partial: 'restaurants/partials/informations'

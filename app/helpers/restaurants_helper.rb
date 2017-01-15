@@ -18,7 +18,7 @@ module RestaurantsHelper
     get_pln(cheapest) << ' - ' << get_pln(most_expensive)
   end
 
-  def range_of_meal_prices meal
+  def range_of_meal_prices meal, small_devices = false
      costs = meal.meal_sizes.pluck(:cost).sort
      cheapest = costs[0]
      the_most_expensive = costs[-1]
@@ -26,7 +26,11 @@ module RestaurantsHelper
      if cheapest == the_most_expensive
         return get_pln(cheapest)
       else
-        return get_pln(cheapest) + ' - ' + get_pln(the_most_expensive)
+        if small_devices
+          return get_pln(cheapest) + ' +'
+        else
+          return get_pln(cheapest) + ' - ' + get_pln(the_most_expensive)
+        end
       end
   end
 
