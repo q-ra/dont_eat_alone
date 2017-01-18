@@ -25,5 +25,22 @@ pl:
     comments: Komentarze
     matchings: Dopasowania
 
+    name: Nazwa
+    city: Miasto
+    street: Ulica
+    meal_type: Rodzaj jedzenia
+    category: Kategoria
+
+    opening_closing: Godziny otwarcia
+
+    mo: Poniedziałek
+    tu: Wtorek
+    we: Środa
+    th: Czwartek
+    fr: Piątek
+    sa: Sobota
+    su: Niedziela
+
+
   restaurant:
     report_new: Zgłoś nową restaurację

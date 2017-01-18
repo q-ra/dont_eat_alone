@@ -3,9 +3,8 @@ module RestaurantsHelper
     'http://pyszne.pl/' + link
   end
 
-  def todays_opening_closing restaurant
+  def todays_opening_closing restaurant, day_number = Time.now.wday.to_i
     days = %w(mo tu we th fr sa su)
-    day_number = Time.now.wday.to_i
     opening_closing = restaurant.opening_closing
     opening = opening_closing[days[day_number] + '_opening']
     closing = opening_closing[days[day_number] + '_closing']
@@ -37,4 +36,5 @@ module RestaurantsHelper
   def meal_size_fix_name name
     (name == 'Normal' or name.blank?) ? 'Standardowa porcja' : name
   end
+
 end

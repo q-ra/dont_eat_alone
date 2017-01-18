@@ -1,35 +1,33 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @restaurant.name
-%p
-  %b Pyszne address:
-  = @restaurant.pyszne_address
-%p
-  %b Picture address:
-  = @restaurant.picture_address
-%p
-  %b Meal type:
-  = @restaurant.meal_type
-%p
-  %b City:
-  = @restaurant.city
-%p
-  %b Street:
-  = @restaurant.street
-%p
-  %b Zip code:
-  = @restaurant.zip_code
-%p
-  %b Website:
-  = @restaurant.website
-%p
-  %b Category:
-  = @restaurant.category
-%p
-  %b Latitude:
-  = @restaurant.latitude
-%p
-  %b Longitude:
-  = @restaurant.longitude
+%table.striped
+  %tbody
+    %tr
+      %td
+        = t('miscellaneous.name')
+      %td
+        = @restaurant.name
+    %tr
+      %td
+        = t('miscellaneous.city')
+      %td
+        = @restaurant.city
+    %tr
+      %td
+        = t('miscellaneous.street')
+      %td
+        = @restaurant.street
+    %tr
+      %td
+        = t('miscellaneous.meal_type')
+      %td
+        = @restaurant.meal_type
+    %tr
+      %td
+        = t('miscellaneous.category')
+      %td
+        = @restaurant.category
+    - %w(mo tu we th fr sa su).each.with_index do |day, indx|
+      %tr
+        %td
+          = t("miscellaneous.#{day}")
+        %td
+          = todays_opening_closing @restaurant, indx
