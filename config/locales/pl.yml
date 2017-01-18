@@ -31,6 +31,8 @@ pl:
     meal_type: Rodzaj jedzenia
     category: Kategoria
 
+    prices: Ceny
+    
     opening_closing: Godziny otwarcia
 
     mo: Poniedziałek

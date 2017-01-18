@@ -8,7 +8,7 @@ module RestaurantsHelper
     opening_closing = restaurant.opening_closing
     opening = opening_closing[days[day_number] + '_opening']
     closing = opening_closing[days[day_number] + '_closing']
-    opening << ' - ' << closing
+    opening + ' - ' + closing
   end
 
   def range_of_prices restaurant

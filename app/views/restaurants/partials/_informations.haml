@@ -1,4 +1,4 @@
-%table.striped
+%table.striped.centered.responsive-table
   %tbody
     %tr
       %td
@@ -31,3 +31,8 @@
           = t("miscellaneous.#{day}")
         %td
           = todays_opening_closing @restaurant, indx
+    %tr
+      %td
+        = t('miscellaneous.prices')
+      %td
+        = range_of_prices @restaurant
