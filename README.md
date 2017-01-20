@@ -12,7 +12,7 @@ Aplikacja po podaniu danych takich jak między innymi:
 
 Będzie dobierać do siebie użytkowników, wysyłać im zaproszenia i/ lub nawiązywać chat między nimi.
 Aplikacja pomoże także w wyborze lokalu, udostępni informacje takie jak adresy, numery telefonów,
-godzine otwarcia, strony internetowe czy rodzaje serwowanej żywności przez lokal.
+godziny otwarcia, strony internetowe czy rodzaje serwowanej żywności przez lokal.
 Posiadać będzie także interaktywną mapę lokali.
 
 Aplikacja będzie korzystać z takich technologii jak:
