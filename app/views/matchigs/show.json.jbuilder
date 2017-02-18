@@ -1,0 +1,1 @@
+json.partial! "matchigs/matchig", matchig: @matchig

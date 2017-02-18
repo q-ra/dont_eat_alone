@@ -1,0 +1,19 @@
+%h1 Listing matchigs
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @matchigs.each do |matchig|
+      %tr
+        %td= link_to 'Show', matchig
+        %td= link_to 'Edit', edit_matchig_path(matchig)
+        %td= link_to 'Destroy', matchig, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Matchig', new_matchig_path

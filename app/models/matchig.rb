@@ -1,0 +1,2 @@
+class Matchig < ApplicationRecord
+end
