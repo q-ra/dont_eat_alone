@@ -1,2 +1,0 @@
-class Matchig < ApplicationRecord
-end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112223037) do
+ActiveRecord::Schema.define(version: 20170221195801) do
 
   create_table "affairs", force: :cascade do |t|
     t.integer  "first_person_id"
@@ -30,6 +30,19 @@ ActiveRecord::Schema.define(version: 20170112223037) do
 
   create_table "chats", force: :cascade do |t|
     t.integer  "chat_user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "matching_users", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "matching_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "matchings", force: :cascade do |t|
+    t.text     "requirements"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -98,6 +111,11 @@ ActiveRecord::Schema.define(version: 20170112223037) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "similar_matchings", force: :cascade do |t|
+    t.integer "similar_matching_id"
+    t.integer "matching_id"
   end
 
   create_table "user_restaurants", force: :cascade do |t|

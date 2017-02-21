@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_many :chats, through: :chat_users
   has_many :user_restaurans
   has_many :restaurants, through: :user_restaurans
+  has_many :matching_users
+  has_many :matchings, through: :matching_users
 end
