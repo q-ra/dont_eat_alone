@@ -1,2 +1,13 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+'use strict'
+
+new Vue({
+  el: '.js-vue-new-matching-form',
+  methods: {
+        
+  },
+
+  data: {
+    flashJson: {}
+  },
+
+})

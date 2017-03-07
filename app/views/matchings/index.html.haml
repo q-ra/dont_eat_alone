@@ -1,0 +1,19 @@
+%h1 Listing matchings
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @matchings.each do |matching|
+      %tr
+        %td= link_to 'Show', matching
+        %td= link_to 'Edit', edit_matching_path(matching)
+        %td= link_to 'Destroy', matching, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Matching', new_matching_path

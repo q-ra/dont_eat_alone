@@ -62,9 +62,10 @@ ActiveRecord::Schema.define(version: 20170307180347) do
     t.string   "sex"
     t.float    "longitute"
     t.float    "latitute"
+    t.boolean  "searchable",              default: true
     t.integer  "max_distance_from_point"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   create_table "meal_sizes", force: :cascade do |t|

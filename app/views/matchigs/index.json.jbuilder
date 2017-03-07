@@ -1,1 +1,0 @@
-json.array! @matchigs, partial: 'matchigs/matchig', as: :matchig
