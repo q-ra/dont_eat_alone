@@ -23,3 +23,4 @@
 config/application.yml
 public/system/*
 .tern-project
+.idea

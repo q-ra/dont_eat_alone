@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221195801) do
+ActiveRecord::Schema.define(version: 20170307180347) do
 
   create_table "affairs", force: :cascade do |t|
     t.integer  "first_person_id"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 20170221195801) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "matching_meals", force: :cascade do |t|
+    t.integer "matching_id"
+    t.integer "meal_id"
+  end
+
+  create_table "matching_meals_names", force: :cascade do |t|
+    t.integer "matching_id"
+    t.string  "meal_name"
+  end
+
+  create_table "matching_restaurants", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.integer  "matching_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "matching_users", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "matching_id"
@@ -42,9 +59,12 @@ ActiveRecord::Schema.define(version: 20170221195801) do
   end
 
   create_table "matchings", force: :cascade do |t|
-    t.text     "requirements"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "sex"
+    t.float    "longitute"
+    t.float    "latitute"
+    t.integer  "max_distance_from_point"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "meal_sizes", force: :cascade do |t|
